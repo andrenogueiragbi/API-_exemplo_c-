@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    image: app-csharp:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" 
+      - "5044:5044"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+    volumes:
+      - ./Storage:/app/Storage

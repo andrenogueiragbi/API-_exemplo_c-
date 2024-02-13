@@ -8,9 +8,9 @@ namespace PrimeiraAPI.ViewModel
     public class EmployeeViewModel
     {
         public required string Name { get; set; }
-        public int Age { get; set; }
+        public required  int Age { get; set; }
 
-        public string? photo { get; set; }
+        public required IFormFile Photo { get; set; }
 
 
     }

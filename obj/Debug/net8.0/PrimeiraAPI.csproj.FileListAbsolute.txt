@@ -36,3 +36,12 @@
 /home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
 /home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Npgsql.dll
 /home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/obj/Debug/net8.0/PrimeiraAPI.sourcelink.json
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/andre/Documentos/projetos/C#/PrimeiraAPI/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
