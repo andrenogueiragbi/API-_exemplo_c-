@@ -8,7 +8,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080" 
-      - "5044:5044"
     environment:
       ASPNETCORE_ENVIRONMENT: Production
     volumes:

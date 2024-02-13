@@ -18,7 +18,7 @@ COPY --from=build /app/out ./
 
 # Expor a porta do aplicativo
 EXPOSE 8080
-EXPOSE 5044
+
 
 # Definir o comando de inicialização do aplicativo
 ENTRYPOINT ["dotnet", "PrimeiraAPI.dll"]

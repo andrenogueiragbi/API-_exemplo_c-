@@ -9,7 +9,7 @@ namespace PrimeiraAPI.Infraestrutura
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
              => optionsBuilder.UseNpgsql(
-                "Server=10.0.0.50;" +
+                "Server=177.38.179.2;" +
                 "Port=5432;Database=treinee;" +
                 "User Id=andre;" +
                 "Password=090909;");

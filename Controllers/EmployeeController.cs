@@ -14,9 +14,6 @@ namespace PrimeiraAPI.Controllers
         private readonly ILogger<EmployeeController> _logger;
 
 
-
-
-
         public EmployeeController(IEmployeeRepository employeeRepository, ILogger<EmployeeController> logger)
         {
             _employeeRepository = employeeRepository ?? throw new ArgumentNullException(nameof(employeeRepository));
@@ -24,6 +21,7 @@ namespace PrimeiraAPI.Controllers
             //_mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Add([FromForm] EmployeeViewModel employeeView)
         {
@@ -54,6 +52,7 @@ namespace PrimeiraAPI.Controllers
             return Ok(response);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("{id}")]
         public IActionResult GetId(int id)
@@ -67,7 +66,7 @@ namespace PrimeiraAPI.Controllers
 
         }
 
-
+        [Authorize]
         [HttpGet]
         [Route("{id}/photo")]
         public IActionResult DownloadPhoto(int id)
@@ -87,12 +86,13 @@ namespace PrimeiraAPI.Controllers
 
         }
 
+        [Authorize]
         [HttpGet]
         [Route("pagination")]
         public IActionResult GetPagination(int pageNumber, int pageQuantity)
         {
 
-  
+
             var employee = _employeeRepository.Get(pageNumber, pageQuantity);
 
 

@@ -22,7 +22,7 @@ namespace PrimeiraAPI.services
                 {
                     new Claim("employeeId", employee.id.ToString()),
                 }),
-                Expires = DateTime.UtcNow.AddHours(3),
+                Expires = DateTime.UtcNow.AddHours(24),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
