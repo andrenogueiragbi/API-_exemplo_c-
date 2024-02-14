@@ -1,2 +1,8 @@
 *main.py
 main.py
+
+bin/*
+out/*
+
+bin
+out
