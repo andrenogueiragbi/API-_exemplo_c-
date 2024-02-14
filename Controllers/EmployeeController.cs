@@ -1,5 +1,7 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PrimeiraAPI.Domain.DTOs;
 using PrimeiraAPI.Model;
 using PrimeiraAPI.ViewModel;
 
@@ -10,15 +12,15 @@ namespace PrimeiraAPI.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeRepository _employeeRepository;
-
         private readonly ILogger<EmployeeController> _logger;
 
+        private readonly IMapper _mapper;
 
-        public EmployeeController(IEmployeeRepository employeeRepository, ILogger<EmployeeController> logger)
+        public EmployeeController(IEmployeeRepository employeeRepository, ILogger<EmployeeController> logger, IMapper mapper)
         {
             _employeeRepository = employeeRepository ?? throw new ArgumentNullException(nameof(employeeRepository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            //_mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         [Authorize]
@@ -104,6 +106,22 @@ namespace PrimeiraAPI.Controllers
             _logger.Log(LogLevel.Information, "BUSCA DE PAGINAÇÃO EM FUNCIONÁRIO COM SUCESSO");
 
             return Ok(employee);
+        }
+
+        [HttpGet]
+        [Route("mapper/{id}")]
+        public IActionResult GetIdMapper(int id)
+        {
+
+            var employee = _employeeRepository.Get(id);
+
+            var employeesDTOS = _mapper.Map<EmployeeDTO>(employee);
+
+
+            if (employeesDTOS != null) return Ok(employeesDTOS);
+
+            return Ok(new { error = false, message = $"Not exist id: {id} in database", employee });
+
         }
 
 

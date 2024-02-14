@@ -1,12 +1,12 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 using PrimeiraAPI.Infraestrutura;
 using PrimeiraAPI.Model;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 using System.Text;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.OpenApi.Models;
+using PrimeiraAPI.Application.Mapping;
 
 
 
@@ -14,6 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Adiciona serviços de controladores
 builder.Services.AddControllers();
+
+
+builder.Services.AddAutoMapper(typeof(DomainToDTOMapping));
+
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
