@@ -5,13 +5,13 @@ from faker import Faker
 
 faker = Faker()
 
-url = "http://localhost:5044/api/v1/employee"
+url = "http://tiandre.com.br:8080/api/v1/employee"
 
-for value in range(0,10):
+for value in range(1,100000):
     
     data = {
     "Name": faker.name(),
-    "Age": random.randint(0, 1000)
+    "Age": random.randint(1, 100)
     }
     
     headers = {
@@ -26,7 +26,7 @@ for value in range(0,10):
 
     response = requests.post(url=url, data=data, files=files,headers=headers)
 
-    print("Response:", response.json())
+    print(f"#{value} Response:", response.json())
         
 
 

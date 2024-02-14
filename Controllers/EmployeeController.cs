@@ -37,7 +37,7 @@ namespace PrimeiraAPI.Controllers
             _employeeRepository.Add(employee);
 
 
-
+            _logger.Log(LogLevel.Information, "CRIAÇÂO DE FUNCIONÁRIO COM SUCESSO");
             return Ok(new { error = false, message = "success in creating", employee = employee });
 
         }
@@ -49,6 +49,8 @@ namespace PrimeiraAPI.Controllers
             var employee = _employeeRepository.Get();
             var response = new { error = false, employee };
 
+            _logger.Log(LogLevel.Information, "BUSCA DE TODOS OS FUNCIONÁRIO COM SUCESSO");
+
             return Ok(response);
         }
 
@@ -59,6 +61,8 @@ namespace PrimeiraAPI.Controllers
         {
 
             var employee = _employeeRepository.Get(id);
+
+            _logger.Log(LogLevel.Information, "BUSCA DE UM FUNCIONÁRIO COM SUCESSO");
 
             if (employee != null) return Ok(employee);
 
@@ -82,6 +86,8 @@ namespace PrimeiraAPI.Controllers
 
             }
 
+            _logger.Log(LogLevel.Information, "BUSCA DE FOTO DO FUNCIONÁRIO COM SUCESSO");
+
             return Ok(new { error = false, message = $"Not exist id: {id} in database", employee });
 
         }
@@ -95,6 +101,7 @@ namespace PrimeiraAPI.Controllers
 
             var employee = _employeeRepository.Get(pageNumber, pageQuantity);
 
+            _logger.Log(LogLevel.Information, "BUSCA DE PAGINAÇÃO EM FUNCIONÁRIO COM SUCESSO");
 
             return Ok(employee);
         }
